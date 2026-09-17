@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LOCGICIAN | Professional Loctician & Loc Studio</title>
+  <meta name="description" content="Master Loctician services specializing in installations, retwists, styling, and healthy loc care. Creating magic for loc'd crowns without a wand.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            sunshine: '#FFD166',
+            jet: '#111827',
+            gold: '#E5A93C',
+            offwhite: '#F9FAFB',
+            charcoal: '#374151',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Syne', 'Outfit', 'sans-serif'],
+            display: ['Outfit', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #111827;
+      color: #F9FAFB;
+      font-family: 'Inter', sans-serif;
+    }
+    h1, h2, h3, h4, .font-heading {
+      font-family: 'Syne', 'Outfit', sans-serif;
+    }
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #111827;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #374151;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #FFD166;
+    }
+  </style>
+</head>
+<body class="bg-jet text-offwhite antialiased selection:bg-sunshine selection:text-jet">
+
+  <!-- Sticky Navigation Bar -->
+  <header id="main-nav" class="sticky top-0 z-40 w-full bg-jet/95 backdrop-blur-md border-b border-gray-800 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-2 group">
+        <div class="relative flex items-center">
+          <span class="text-sunshine text-2xl font-black transform -rotate-12">★</span>
+          <span class="font-serif italic text-3xl text-sunshine font-extrabold -ml-0.5 mr-0.5">L</span>
+          <span class="font-heading font-black tracking-wider text-2xl text-white group-hover:text-sunshine transition-colors">LOCGICIAN</span>
+        </div>
+      </a>
+
+      <!-- Navigation links -->
+      <nav class="hidden lg:flex items-center gap-8">
+        <a href="#about" class="text-xs font-bold tracking-widest text-gray-300 hover:text-sunshine transition-colors uppercase">About</a>
+        <a href="#services" class="text-xs font-bold tracking-widest text-gray-300 hover:text-sunshine transition-colors uppercase">Loc Services</a>
+        <a href="#gallery" class="text-xs font-bold tracking-widest text-gray-300 hover:text-sunshine transition-colors uppercase">Crown Gallery</a>
+        <a href="#goodlocday" class="text-xs font-bold tracking-widest text-gray-300 hover:text-sunshine transition-colors uppercase">Good Loc Day</a>
+        <a href="#contact" class="text-xs font-bold tracking-widest text-gray-300 hover:text-sunshine transition-colors uppercase">Contact</a>
+      </nav>
+
+      <!-- CTA Button -->
+      <div class="hidden sm:flex items-center gap-4">
+        <button onclick="openBookingModal('starter-locs')" class="bg-sunshine hover:bg-gold text-jet font-black text-xs uppercase tracking-wider px-6 py-2.5 rounded-full transition-all shadow-md shadow-sunshine/20">
+          Book Crown Magic
+        </button>
+      </div>
+
+      <!-- Mobile toggle -->
+      <button id="mobile-menu-btn" class="lg:hidden text-gray-300 hover:text-sunshine p-2" onclick="toggleMobileMenu()">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/></svg>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-jet border-b border-gray-800 px-6 py-4 space-y-3">
+      <a href="#about" onclick="toggleMobileMenu()" class="block text-sm font-bold text-gray-300 hover:text-sunshine uppercase">About</a>
+      <a href="#services" onclick="toggleMobileMenu()" class="block text-sm font-bold text-gray-300 hover:text-sunshine uppercase">Loc Services</a>
+      <a href="#gallery" onclick="toggleMobileMenu()" class="block text-sm font-bold text-gray-300 hover:text-sunshine uppercase">Crown Gallery</a>
+      <a href="#goodlocday" onclick="toggleMobileMenu()" class="block text-sm font-bold text-gray-300 hover:text-sunshine uppercase">Good Loc Day</a>
+      <a href="#contact" onclick="toggleMobileMenu()" class="block text-sm font-bold text-gray-300 hover:text-sunshine uppercase">Contact</a>
+      <button onclick="toggleMobileMenu(); openBookingModal('starter-locs')" class="w-full bg-sunshine text-jet font-black text-xs uppercase py-3 rounded-xl mt-2">
+        Book Crown Magic
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative bg-jet text-white border-b border-gray-800 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 min-h-[580px] items-stretch">
+        
+        <!-- Left Hero Column -->
+        <div class="lg:col-span-7 py-12 lg:py-16 flex flex-col justify-center pr-0 lg:pr-8 z-10">
+          <div class="inline-flex items-center gap-2 mb-4 w-fit px-3.5 py-1.5 rounded-full bg-gray-800/80 border border-gray-700">
+            <span class="text-sunshine">✨</span>
+            <span class="text-xs font-bold uppercase tracking-widest text-sunshine">Premier Crown Alchemy & Loc Studio</span>
+          </div>
+
+          <h1 class="font-heading font-black text-3xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.08] text-white mb-6">
+            CREATING <span class="text-sunshine underline decoration-sunshine/40 decoration-4">MAGIC</span> FOR <span class="text-sunshine">LOC'D CROWNS</span> WITHOUT A WAND.
+          </h1>
+
+          <p class="text-base sm:text-lg text-gray-300 font-normal leading-relaxed max-w-2xl mb-8">
+            Master Loctician services specializing in installations, retwists, styling, and healthy loc care. Join the community <a href="#goodlocday" class="text-sunshine hover:underline font-semibold">@goodlocday</a>.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 mb-10">
+            <button onclick="openBookingModal('retwist-style')" class="bg-sunshine hover:bg-gold text-jet font-black text-sm uppercase tracking-wider px-8 py-4 rounded-full transition-all shadow-lg shadow-sunshine/25">
+              Book Appointment
+            </button>
+            <a href="#services" class="bg-transparent hover:bg-white/5 border-2 border-white/80 text-white font-bold text-sm uppercase tracking-wider px-7 py-3.5 rounded-full transition-all">
+              Explore Services
+            </a>
+          </div>
+
+          <!-- Status Badges Pill -->
+          <div class="inline-flex flex-wrap items-center gap-2 sm:gap-3 bg-white text-jet px-4 py-2.5 rounded-full shadow-md w-fit text-xs sm:text-sm font-extrabold tracking-wide">
+            <span>🧙‍♂️ MASTER LOCTICIAN</span>
+            <span class="text-gray-400">•</span>
+            <span>⭐ 241K+ COMMUNITY</span>
+            <span class="text-gray-400">•</span>
+            <span>✨ #LOCGICIAN</span>
+          </div>
+        </div>
+
+        <!-- Right Hero Visual -->
+        <div class="lg:col-span-5 relative flex items-center justify-center py-6 lg:py-10">
+          <div class="relative w-full h-full min-h-[380px] rounded-2xl overflow-hidden border-2 border-gray-800 shadow-2xl bg-gray-900 group">
+            <img 
+              src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=1200&q=80" 
+              alt="Master Loctician styling healthy dreadlocks" 
+              class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-jet via-transparent to-transparent opacity-70"></div>
+
+            <!-- Color Swatch Strip matching screenshot -->
+            <div class="absolute bottom-4 left-4 right-4 flex flex-wrap items-center gap-2 bg-jet/85 backdrop-blur-md px-3.5 py-2 rounded-xl border border-gray-700 text-[11px] font-bold">
+              <div class="flex items-center gap-1.5 text-gray-200">
+                <span class="w-3 h-3 rounded-full bg-gold inline-block"></span>
+                <span>WARM GOLD ACCENT</span>
+              </div>
+              <div class="flex items-center gap-1.5 text-gray-200">
+                <span class="w-3 h-3 rounded-full bg-offwhite inline-block"></span>
+                <span class="text-white">OFF-WHITE</span>
+              </div>
+              <div class="flex items-center gap-1.5 text-gray-200">
+                <span class="w-3 h-3 rounded-full bg-charcoal inline-block"></span>
+                <span>CHARCOAL GRAY</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Services Grid -->
+  <section id="services" class="py-16 lg:py-24 bg-offwhite text-jet border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 pb-6 border-b border-gray-200">
+        <div>
+          <div class="text-xs font-bold uppercase tracking-widest text-gold mb-2">★ Master Menu</div>
+          <h2 class="font-heading font-black text-3xl sm:text-4xl text-jet tracking-tight">Featured Loc Care Services</h2>
+          <p class="text-gray-600 text-sm mt-1 max-w-xl">Holistic botanical steam washes, precision parts, and tension-free care.</p>
+        </div>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="flex items-center gap-2 overflow-x-auto pb-4 mb-8">
+        <button onclick="filterServices('all')" id="tab-all" class="category-tab px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-jet text-sunshine border border-jet">All Offerings</button>
+        <button onclick="filterServices('starter')" id="tab-starter" class="category-tab px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-white text-gray-700 border border-gray-300">Starter Locs</button>
+        <button onclick="filterServices('maintenance')" id="tab-maintenance" class="category-tab px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-white text-gray-700 border border-gray-300">Maintenance & Retwist</button>
+        <button onclick="filterServices('styling')" id="tab-styling" class="category-tab px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-white text-gray-700 border border-gray-300">Loc Styling & Updos</button>
+        <button onclick="filterServices('detox')" id="tab-detox" class="category-tab px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-white text-gray-700 border border-gray-300">Detox & Treatments</button>
+      </div>
+
+      <!-- Services Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="services-grid">
+        
+        <!-- Service 1: Starter Locs Install -->
+        <div class="service-item starter bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-sunshine flex items-center justify-center text-xl mb-4">🪄</div>
+            <h3 class="font-heading font-black text-lg text-jet mb-2">STARTER LOCS INSTALL</h3>
+            <p class="text-gray-600 text-sm mb-4">Starter locs install with custom grid parting (diamond, square or triangle) and scalp prep.</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div>
+              <div class="text-xs text-gray-500">3.5 - 5 hrs</div>
+              <div class="font-heading font-black text-xl text-jet">$180.00</div>
+            </div>
+            <button onclick="openBookingModal('STARTER LOCS INSTALL')" class="bg-jet hover:bg-sunshine text-white hover:text-jet text-xs font-black uppercase px-4 py-2 rounded-full transition-colors">
+              Book Service
+            </button>
+          </div>
+        </div>
+
+        <!-- Service 2: Retwist & Style -->
+        <div class="service-item maintenance styling bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-sunshine flex items-center justify-center text-xl mb-4">✨</div>
+            <h3 class="font-heading font-black text-lg text-jet mb-2">RETWIST & STYLE</h3>
+            <p class="text-gray-600 text-sm mb-4">Precision palm-roll or interlocking retwist paired with two-strand rope twists or barrel braids.</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div>
+              <div class="text-xs text-gray-500">2 - 2.5 hrs</div>
+              <div class="font-heading font-black text-xl text-jet">$95.00</div>
+            </div>
+            <button onclick="openBookingModal('RETWIST & STYLE')" class="bg-jet hover:bg-sunshine text-white hover:text-jet text-xs font-black uppercase px-4 py-2 rounded-full transition-colors">
+              Book Service
+            </button>
+          </div>
+        </div>
+
+        <!-- Service 3: Loc Detox & Treatment -->
+        <div class="service-item detox bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-sunshine flex items-center justify-center text-xl mb-4">🌿</div>
+            <h3 class="font-heading font-black text-lg text-jet mb-2">LOC DETOX & TREATMENT</h3>
+            <p class="text-gray-600 text-sm mb-4">Apple cider vinegar, baking soda, and essential oil soak to remove buildup and restore loc bounce.</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div>
+              <div class="text-xs text-gray-500">1.5 - 2 hrs</div>
+              <div class="font-heading font-black text-xl text-jet">$75.00</div>
+            </div>
+            <button onclick="openBookingModal('LOC DETOX & TREATMENT')" class="bg-jet hover:bg-sunshine text-white hover:text-jet text-xs font-black uppercase px-4 py-2 rounded-full transition-colors">
+              Book Service
+            </button>
+          </div>
+        </div>
+
+        <!-- Service 4: Retwist Loc & Treatment -->
+        <div class="service-item maintenance detox bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-sunshine flex items-center justify-center text-xl mb-4">👑</div>
+            <h3 class="font-heading font-black text-lg text-jet mb-2">RETWIST LOC & TREATMENT</h3>
+            <p class="text-gray-600 text-sm mb-4">Comprehensive crown package: clarifying shampoo, deep herbal steam conditioner, and crisp retwist.</p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center justify-between">
+            <div>
+              <div class="text-xs text-gray-500">2.5 - 3 hrs</div>
+              <div class="font-heading font-black text-xl text-jet">$135.00</div>
+            </div>
+            <button onclick="openBookingModal('RETWIST LOC & TREATMENT')" class="bg-jet hover:bg-sunshine text-white hover:text-jet text-xs font-black uppercase px-4 py-2 rounded-full transition-colors">
+              Book Service
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Crown Transformation Gallery -->
+  <section id="gallery" class="py-16 lg:py-24 bg-jet text-white border-b border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-10 pb-6 border-b border-gray-800">
+        <div>
+          <div class="text-xs font-bold uppercase tracking-widest text-sunshine mb-2">✨ Crown Alchemy</div>
+          <h2 class="font-heading font-black text-3xl sm:text-4xl text-white">Before & After Transformations</h2>
+        </div>
+        <a href="https://instagram.com/locgician" target="_blank" class="mt-3 sm:mt-0 inline-flex items-center gap-2 text-xs font-bold bg-gray-800 text-white px-4 py-2 rounded-full border border-gray-700 hover:text-sunshine">
+          <span>@locgician on Instagram</span>
+        </a>
+      </div>
+
+      <!-- Before / After Transformation Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-gray-900 rounded-2xl overflow-hidden border border-gray-800">
+          <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=600&q=80" alt="Loc retwist transformation" class="w-full aspect-[4/3] object-cover">
+          <div class="p-4">
+            <h4 class="font-heading font-bold text-sm text-white">Geometric Parting & Retwist</h4>
+            <p class="text-gray-400 text-xs mt-1">Diamond parts, organic rosemary oil seal, zero tension.</p>
+          </div>
+        </div>
+
+        <div class="bg-gray-900 rounded-2xl overflow-hidden border border-gray-800">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="Crown petals loc updo" class="w-full aspect-[4/3] object-cover">
+          <div class="p-4">
+            <h4 class="font-heading font-bold text-sm text-white">Crown Petals & High Loc Bun</h4>
+            <p class="text-gray-400 text-xs mt-1">Sculptural red-carpet updo with gold cuffs.</p>
+          </div>
+        </div>
+
+        <div class="bg-gray-900 rounded-2xl overflow-hidden border border-gray-800">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Mature healthy locs" class="w-full aspect-[4/3] object-cover">
+          <div class="p-4">
+            <h4 class="font-heading font-bold text-sm text-white">4-Year Mature Loc Journey</h4>
+            <p class="text-gray-400 text-xs mt-1">Hydrated from root to tip with ozonated steam therapy.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About & Good Loc Day Spotlight -->
+  <section id="about" class="py-16 lg:py-24 bg-jet text-white border-b border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Good Loc Day Box -->
+      <div id="goodlocday" class="bg-gradient-to-r from-gray-900 to-gray-800 border-2 border-sunshine/30 rounded-3xl p-8 sm:p-12 mb-16 shadow-2xl">
+        <div class="max-w-3xl space-y-4">
+          <div class="inline-flex items-center gap-2 bg-sunshine text-jet text-xs font-black uppercase px-3 py-1 rounded-full">
+            Sister Movement • 241K+ Members
+          </div>
+          <h3 class="font-heading font-black text-2xl sm:text-4xl text-white">
+            CELEBRATING EVERY STAGE WITH <span class="text-sunshine">@GOODLOCDAY</span>
+          </h3>
+          <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+            Locgician is the home studio behind @goodlocday—a global community of 241,000+ crown holders embracing natural texture, zero tension, and daily loc pride.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Studio Booking & Policies -->
+  <section id="contact" class="py-16 lg:py-24 bg-jet text-white border-b border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        
+        <!-- Location card -->
+        <div class="bg-gray-900 rounded-3xl p-8 border border-gray-800">
+          <h3 class="font-heading font-black text-xl text-white mb-4">Locgician Sanctuary Studio</h3>
+          <p class="text-gray-300 text-sm mb-2">4822 Royal Palm Blvd, Suite 204</p>
+          <p class="text-gray-400 text-xs mb-6">Tue – Sat: 9:00 AM – 6:30 PM | Sun & Mon: Closed</p>
+          <div class="space-y-2 text-xs text-gray-300">
+            <p><strong>Phone / SMS:</strong> (555) 562-6244</p>
+            <p><strong>Instagram:</strong> @locgician • @goodlocday</p>
+            <p><strong>Email:</strong> crowns@locgician.com</p>
+          </div>
+          <button onclick="openBookingModal('RETWIST & STYLE')" class="w-full bg-sunshine hover:bg-gold text-jet font-black text-xs uppercase tracking-wider py-3.5 rounded-xl mt-6">
+            Book Appointment Now
+          </button>
+        </div>
+
+        <!-- Policies -->
+        <div class="bg-gray-900 rounded-3xl p-8 border border-gray-800">
+          <h3 class="font-heading font-black text-xl text-white mb-4">Studio Policies</h3>
+          <ul class="space-y-3 text-xs text-gray-300">
+            <li><strong>1. Clean Hair Policy:</strong> Hair must be washed within 24 hours unless wash/detox service is booked.</li>
+            <li><strong>2. Grace Period:</strong> 15-minute grace period. A $20 fee applies after 15 mins.</li>
+            <li><strong>3. 30% Deposit:</strong> Required to secure your chair. 48-hr notice for rescheduling.</li>
+            <li><strong>4. Peaceful Suite:</strong> No extra guests or unsupervised children permitted.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-jet text-gray-400 py-10 text-xs border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 text-center space-y-4">
+      <div class="text-sunshine font-heading font-black text-xl">★L LOCGICIAN</div>
+      <p>Creating magic for loc'd crowns without a wand. #locgician • @goodlocday</p>
+      <p class="text-gray-600">© 2026 LOCGICIAN Studio. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Booking Modal Popup -->
+  <div id="booking-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-jet text-white rounded-3xl border border-gray-700 max-w-lg w-full p-6 relative">
+      <button onclick="closeBookingModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl">✕</button>
+      
+      <div class="flex items-center gap-2 mb-4">
+        <span class="text-sunshine text-xl">★</span>
+        <h3 class="font-heading font-black text-lg">Book Crown Magic</h3>
+      </div>
+
+      <form id="standalone-book-form" onsubmit="handleBookingSubmit(event)" class="space-y-4 text-xs">
+        <div>
+          <label class="block uppercase font-bold text-gray-400 mb-1">Select Service</label>
+          <select id="modal-service-select" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-3 py-2 text-white">
+            <option value="STARTER LOCS INSTALL">STARTER LOCS INSTALL ($180)</option>
+            <option value="RETWIST & STYLE">RETWIST & STYLE ($95)</option>
+            <option value="LOC DETOX & TREATMENT">LOC DETOX & TREATMENT ($75)</option>
+            <option value="RETWIST LOC & TREATMENT">RETWIST LOC & TREATMENT ($135)</option>
+          </select>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block uppercase font-bold text-gray-400 mb-1">Date</label>
+            <input type="date" required class="w-full bg-gray-900 border border-gray-700 rounded-xl px-3 py-2 text-white">
+          </div>
+          <div>
+            <label class="block uppercase font-bold text-gray-400 mb-1">Time</label>
+            <select class="w-full bg-gray-900 border border-gray-700 rounded-xl px-3 py-2 text-white">
+              <option>10:00 AM</option>
+              <option>12:30 PM</option>
+              <option>2:30 PM</option>
+              <option>4:30 PM</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block uppercase font-bold text-gray-400 mb-1">Full Name</label>
+          <input type="text" required placeholder="Your Name" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-3 py-2 text-white">
+        </div>
+
+        <div>
+          <label class="block uppercase font-bold text-gray-400 mb-1">Phone Number</label>
+          <input type="tel" required placeholder="(555) 000-0000" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-3 py-2 text-white">
+        </div>
+
+        <div class="flex items-center gap-2">
+          <input type="checkbox" required id="policy-agree" class="accent-sunshine">
+          <label for="policy-agree" class="text-gray-300">I agree to the Locgician studio cancellation & clean hair policies.</label>
+        </div>
+
+        <button type="submit" class="w-full bg-sunshine hover:bg-gold text-jet font-black text-xs uppercase py-3 rounded-xl">
+          Confirm Appointment Request
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Vanilla JavaScript Logic -->
+  <script>
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    }
+
+    function openBookingModal(serviceName) {
+      const modal = document.getElementById('booking-modal');
+      const select = document.getElementById('modal-service-select');
+      if (serviceName && select) {
+        for (let i = 0; i < select.options.length; i++) {
+          if (select.options[i].value.includes(serviceName) || select.options[i].text.includes(serviceName)) {
+            select.selectedIndex = i;
+            break;
+          }
+        }
+      }
+      modal.classList.remove('hidden');
+    }
+
+    function closeBookingModal() {
+      document.getElementById('booking-modal').classList.add('hidden');
+    }
+
+    function handleBookingSubmit(e) {
+      e.preventDefault();
+      alert('Thank you! Your crown appointment has been scheduled. Check your phone for confirmation and prep details.');
+      closeBookingModal();
+    }
+
+    function filterServices(cat) {
+      const items = document.querySelectorAll('.service-item');
+      const tabs = document.querySelectorAll('.category-tab');
+
+      tabs.forEach(tab => {
+        tab.classList.remove('bg-jet', 'text-sunshine', 'border-jet');
+        tab.classList.add('bg-white', 'text-gray-700', 'border-gray-300');
+      });
+
+      const activeTab = document.getElementById('tab-' + cat);
+      if (activeTab) {
+        activeTab.classList.remove('bg-white', 'text-gray-700', 'border-gray-300');
+        activeTab.classList.add('bg-jet', 'text-sunshine', 'border-jet');
+      }
+
+      items.forEach(item => {
+        if (cat === 'all' || item.classList.contains(cat)) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

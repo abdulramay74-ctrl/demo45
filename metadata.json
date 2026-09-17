@@ -1,0 +1,6 @@
+{
+  "name": "Locgician",
+  "description": "Professional Loctician and Loc Studio creating magic for loc'd crowns without a wand. Loc installations, retwists, styling, and healthy loc care community @goodlocday.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
